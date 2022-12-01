@@ -1,0 +1,22 @@
+{
+    "name": "aws-lambda-nodejs-18-loaders-typescript",
+    "version": "1.0.0",
+    "main": "index.mjs",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+      "dev": "node --enable-source-maps --loader ./loader.mjs ./index.mjs",
+      "test": "node --enable-source-maps --loader ./loader.mjs ./debug.ts"
+    },
+    "devDependencies": {
+      "@types/node": "^18.11.10",
+      "typescript": "4.9.3"
+    },
+    "dependencies": {
+      "esbuild": "^0.15.16",
+      "mlly": "^1.0.0"
+    },
+    "engines": {
+      "node": ">= 18"
+    }
+  }

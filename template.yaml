@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Lambda using nodejs18.x runtime version to run typescript with custom loaders api
+Transform:
+- AWS::Serverless-2016-10-31
+
+Resources:
+  SomeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: "nodejs18-ts"
+      Handler: index.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      MemorySize: 128
+      Timeout: 100
+      Description: 
+      Environment:
+        Variables:
+          NODE_OPTIONS: --enable-source-maps --loader ./loader.mjs
+  
